@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -45,6 +43,10 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
+        linebreak = true, -- sets vim.opt.linebreak to prevent wrapping in the middle of a word
+        list = true, -- sets vim.opt.list to show whitespace characters.
+        listchars = "tab:>>,trail:·,extends:◣,precedes:◢,nbsp:○", -- Visualize special characters like tabs and trailing spaces
+        clipboard = "unnamedplus", -- Use the system clipboard for all operations (yank, delete, change and put)
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -79,6 +81,10 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+      -- visual mode mappings
+      v = {
+        ["<Leader>s"] = { ":Sort<cr>", desc = "Sort" },
       },
     },
   },

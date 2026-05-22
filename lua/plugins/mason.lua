@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Customize Mason
 
 ---@type LazySpec
@@ -12,12 +10,30 @@ return {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
         -- install language servers
+        "bash-language-server",
+        "clangd",
+        "lemminx",
         "lua-language-server",
+        "marksman",
+
+        -- install linters
+        "codespell",
+        "flake8",
+        "gitlint",
+        "markdownlint",
+        "misspell",
+        "selene",
+        "shellcheck",
+        "shellharden",
 
         -- install formatters
+        "autopep8",
+        "beautysh",
+        "prettier",
         "stylua",
 
         -- install debuggers
+        "cpptools",
         "debugpy",
 
         -- install any other package
