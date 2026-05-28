@@ -106,7 +106,7 @@ install_astronvim() {
         git clone "$CONF_URL" "$nvimpath" -b "$CONF_BRANCH"
     fi
 
-    "$HOME/.local/bin/nvim" --headless +q
+    "$HOME/.local/bin/nvim" +q
     echo "Astronvim installed"
 }
 
