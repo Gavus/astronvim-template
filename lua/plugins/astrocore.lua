@@ -46,12 +46,12 @@ return {
         linebreak = true, -- sets vim.opt.linebreak to prevent wrapping in the middle of a word
         list = true, -- sets vim.opt.list to show whitespace characters.
         listchars = "tab:>>,trail:·,extends:◣,precedes:◢,nbsp:○", -- Visualize special characters like tabs and trailing spaces
-        clipboard = "unnamedplus", -- Use the system clipboard for all operations (yank, delete, change and put)
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+        clipboard = "tmux", -- Use tmux clipboard for all operations (yank, delete, change and put)
       },
     },
     -- Mappings can be configured through AstroCore as well.
