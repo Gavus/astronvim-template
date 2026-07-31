@@ -72,10 +72,10 @@ install_cargo() {
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     echo "Running apt-get update quietly"
-    sudo apt-get -qq update
+    sudo apt-get update
 
     echo "Running apt-get install quietly"
-    sudo apt-get -qq install -y "${apt_pkgs[@]}"
+    sudo apt-get install -y "${apt_pkgs[@]}"
 
     if ! command -v npm > /dev/null; then
         echo "nodejs not found, installing."
