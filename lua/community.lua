@@ -20,7 +20,7 @@ return {
   { import = "astrocommunity.pack.python.base" },
   { import = "astrocommunity.pack.python.isort" },
   { import = "astrocommunity.pack.python.ruff" },
-  { import = "astrocommunity.pack.python.ty" },
+  { import = "astrocommunity.pack.python.basedpyright" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.syntax.vim-easy-align" },
