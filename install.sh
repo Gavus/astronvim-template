@@ -46,7 +46,7 @@ parse_args() {
 }
 
 install_nvim() {
-    local version="v0.12.2"
+    local version="v0.12.4"
     local dirname="nvim-linux-x86_64"
     local share="$HOME/.local"
     local installpath="$share/$dirname-$version"
