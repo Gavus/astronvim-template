@@ -10,7 +10,6 @@ main() {
         remove_astronvim
     fi
 
-    install_nvim
     install_astronvim
 }
 
@@ -43,38 +42,6 @@ parse_args() {
                 ;;
         esac
     done
-}
-
-install_nvim() {
-    local version="v0.12.4"
-    local dirname="nvim-linux-x86_64"
-    local share="$HOME/.local"
-    local installpath="$share/$dirname-$version"
-    local tarfile="$dirname.tar.gz"
-    local url="https://github.com/neovim/neovim/releases/download/$version/$tarfile"
-    local binpath="$HOME/.local/bin"
-
-    mkdir -p "$binpath" "$share"
-
-    if [[ -d "$installpath" ]]; then
-        echo "Nvim $version is already installed"
-        ln -srf "$installpath/bin/"* "$binpath"
-        return
-    fi
-
-    if [[ ! -d "$dirname" ]]; then
-        if [[ ! -f "$tarfile" ]]; then
-            echo "Downloading nvim"
-            wget "$url"
-        fi
-        echo "Extracting nvim"
-        tar -xzvf "$tarfile"
-        rm "$tarfile"
-    fi
-
-    mv "$dirname" "$installpath"
-    ln -srf "$installpath/bin/"* "$binpath"
-    echo "Nvim installed"
 }
 
 remove_astronvim() {

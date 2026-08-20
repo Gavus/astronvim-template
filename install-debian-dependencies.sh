@@ -1,5 +1,10 @@
 #!/bin/bash -e
 
+# Versions
+NVIM_VERSION="v0.12.4"
+LAZYGIT_VERSION="0.64.1"
+NODEJS_VERSION="v26.7.0"
+
 apt_pkgs=( \
         build-essential \
         clang \
@@ -29,8 +34,40 @@ npm_pkgs=( \
 binpath="$HOME/.local/bin"
 mkdir -p "$binpath"
 
+install_nvim() {
+    local version="$NVIM_VERSION"
+    local dirname="nvim-linux-x86_64"
+    local share="$HOME/.local"
+    local installpath="$share/$dirname-$version"
+    local tarfile="$dirname.tar.gz"
+    local url="https://github.com/neovim/neovim/releases/download/$version/$tarfile"
+    local binpath="$HOME/.local/bin"
+
+    mkdir -p "$binpath" "$share"
+
+    if [[ -d "$installpath" ]]; then
+        echo "Nvim $version is already installed"
+        ln -srf "$installpath/bin/"* "$binpath"
+        return
+    fi
+
+    if [[ ! -d "$dirname" ]]; then
+        if [[ ! -f "$tarfile" ]]; then
+            echo "Downloading nvim"
+            wget "$url"
+        fi
+        echo "Extracting nvim"
+        tar -xzvf "$tarfile"
+        rm "$tarfile"
+    fi
+
+    mv "$dirname" "$installpath"
+    ln -srf "$installpath/bin/"* "$binpath"
+    echo "Nvim installed"
+}
+
 install_lazygit() {
-    local version="0.61.1"
+    local version="$LAZYGIT_VERSION"
     local name="lazygit"
     local installpath="$HOME/.local/$name"
     local tarfile="${name}_${version}_linux_x86_64.tar.gz"
@@ -46,7 +83,7 @@ install_lazygit() {
 }
 
 install_nodejs() {
-    local version="v25.9.0"
+    local version="$NODEJS_VERSION"
     local dirname="node-$version-linux-x64"
     local installpath="$HOME/.local/$dirname"
     local tarfile="$dirname.tar.xz"
@@ -85,6 +122,7 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     echo "Running npm install quietly"
     sudo env PATH="$PATH" npm install -g "${npm_pkgs[@]}" > /dev/null
 
+    install_nvim
     install_cargo
     install_lazygit
 fi
