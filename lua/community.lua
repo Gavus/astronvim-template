@@ -12,6 +12,7 @@ return {
   { import = "astrocommunity.editing-support.quick-scope" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.ai.copilotchat-nvim" },
+  { import = "astrocommunity.ai.sidekick-nvim" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cpp" },

@@ -12,6 +12,7 @@ return {
         -- install language servers
         "bash-language-server",
         "clangd",
+        "copilot-language-server",
         "lemminx",
         "lua-language-server",
         "marksman",
