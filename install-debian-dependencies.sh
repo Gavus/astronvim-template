@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # Versions
-NVIM_VERSION="v0.12.4"
+NVIM_VERSION="v0.12.5"
 LAZYGIT_VERSION="0.64.1"
 NODEJS_VERSION="v26.7.0"
 
