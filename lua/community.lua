@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.ai.sidekick-nvim" },
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
   { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.workflow.hardtime-nvim" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.go" },
