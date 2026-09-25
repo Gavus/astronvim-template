@@ -20,6 +20,9 @@ return {
       dashboard = { enabled = false },
       bigfile = { enabled = true },
       image = { enabled = false },
+      notifier = {
+        width = { min = 60, max = 0.9 },
+      },
     },
   },
 }
