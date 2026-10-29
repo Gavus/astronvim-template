@@ -1,0 +1,4 @@
+# Loaded by clangd via XDG_CONFIG_HOME set in lua/plugins/astrolsp.lua.
+CompileFlags:
+  # Clangd doesn't work with unknown target CPUs.
+  Remove: [-mcpu=*]

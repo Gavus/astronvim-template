@@ -46,6 +46,8 @@ return {
       clangd = {
         capabilities = { offsetEncoding = "utf-8" },
         cmd = { "clangd", "--background-index" },
+        -- Makes clangd read its user config from <nvim config>/clangd/config.yaml
+        cmd_env = { XDG_CONFIG_HOME = vim.fn.stdpath "config" },
         on_attach = function(_, bufnr)
           vim.keymap.set("n", "<Leader>lH", "<cmd>ClangdSwitchSourceHeader<cr>", {
             buffer = bufnr,
