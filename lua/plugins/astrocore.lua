@@ -38,6 +38,7 @@ return {
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
+        clipboard = "unnamedplus", -- share yanks and puts with the system clipboard
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
@@ -51,7 +52,6 @@ return {
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
-        clipboard = "tmux", -- Use tmux clipboard for all operations (yank, delete, change and put)
       },
     },
     -- Mappings can be configured through AstroCore as well.
