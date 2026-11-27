@@ -14,6 +14,7 @@ apt_pkgs=( \
         gdu \
         git \
         golang \
+        imagemagick \
         libc6-dev \
         libclang-dev \
         luarocks \

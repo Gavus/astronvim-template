@@ -19,7 +19,7 @@ return {
     opts = {
       dashboard = { enabled = false },
       bigfile = { enabled = true },
-      image = { enabled = false },
+      image = { enabled = true },
       notifier = {
         width = { min = 60, max = 0.9 },
       },
